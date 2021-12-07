@@ -5,7 +5,7 @@
         <div class="flex justify-start lg:w-0 lg:flex-1">
           <a href="#">
             <span class="sr-only">Workflow</span>
-            <img class="h-8 w-auto sm:h-10" src="../assets/logo.png" alt="">
+            <img class="h-14 w-auto sm:h-14" src="../assets/logo.png" alt="">
           </a>
         </div>
         <div class="-mr-2 -my-2 md:hidden">
