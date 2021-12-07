@@ -1,7 +1,6 @@
 <template>
   <main>
     <div>
-      <!-- Hero card -->
       <div class="relative">
         <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100"></div>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -16,7 +15,7 @@
                 <span class="block text-indigo-200">Market your business</span>
               </h1>
               <p class="mt-6 max-w-lg mx-auto text-center text-xl text-indigo-200 sm:max-w-3xl">
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.
+                With ODesigns you can have your own personalized website to market you or your business for the lowest prices.
               </p>
               <div class="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
                 <div class="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
@@ -24,7 +23,7 @@
                     Get started
                   </a>
                   <a href="#" class="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-500 bg-opacity-60 hover:bg-opacity-70 sm:px-8">
-                    Live demo
+                    Free demo
                   </a>
                 </div>
               </div>
@@ -35,8 +34,6 @@
     </div>
     <feature-section/>
     <cta-section/>
-
-    <!-- More main page content here... -->
   </main>
 </template>
 
