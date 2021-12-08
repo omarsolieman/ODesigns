@@ -1,4 +1,5 @@
 <template>
+<div>
   <main>
     <div>
       <div class="relative">
@@ -22,9 +23,9 @@
                   <a href="#" class="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-indigo-700 bg-white hover:bg-indigo-50 sm:px-8">
                     Get started
                   </a>
-                  <a href="#" class="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-500 bg-opacity-60 hover:bg-opacity-70 sm:px-8">
+                  <button @click="showModal" class="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-500 bg-opacity-60 hover:bg-opacity-70 sm:px-8">
                     Free demo
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
@@ -34,17 +35,37 @@
     </div>
     <feature-section/>
     <cta-section/>
+    <booking-modal
+      v-show="isModalVisible"
+      @close="closeModal"
+    />
   </main>
+</div>
 </template>
 
 <script>
 import featureSection from '../sections/featureSection.vue'
 import ctaSection from '../sections/ctaSection.vue'
+import bookingModal from '../components/bookingModal.vue'
 export default {
   components: { 
     featureSection,
     ctaSection, 
+    bookingModal,
   },
+  data() {
+    return {
+      isModalVisible: false,
+    };
+  },
+  methods: {
+    showModal() {
+      this.isModalVisible = true;
+    },
+    closeModal() {
+      this.isModalVisible = false;
+    }
+  }
   
 }
 </script>

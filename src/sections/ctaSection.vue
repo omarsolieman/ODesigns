@@ -8,8 +8,8 @@
               <span class="block">Ready to dive in?</span>
               <span class="block">Get Your Free Demo Now.</span>
             </h2>
-            <p class="mt-4 text-lg leading-6 text-indigo-200">Shoot us an email and we will schedule a meeting to discuss your needs and give you an offer you can't refuse.</p>
-            <a href="#" class="mt-8 bg-white border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-indigo-600 hover:bg-indigo-50">Schedule Now</a>
+            <p class="mt-4 text-lg leading-6 text-indigo-200">Book a session with us Now.</p>
+            <a href="https://calendly.com/odesigns/consultation-session" class="mt-8 bg-white border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-indigo-600 hover:bg-indigo-50">Schedule Now</a>
           </div>
         </div>
         <div class="-mt-6 aspect-w-5 aspect-h-3 md:aspect-w-2 md:aspect-h-1">
