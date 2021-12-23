@@ -3,7 +3,7 @@
     <div class="max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8">
       <div class="sm:flex sm:flex-col sm:align-center">
         <h1 class="text-5xl font-extrabold text-gray-900 sm:text-center">Pricing Plans</h1>
-        <p class="mt-5 text-xl text-gray-500 sm:text-center">Start building for free, then add a site plan to go live. Account plans unlock additional features.</p>
+        <p class="mt-5 text-xl text-gray-500 sm:text-center">We have preset packages for set prices and custom packages. [For custom packages an appointment is needed]</p>
         <div class="relative self-center mt-6 bg-gray-100 rounded-lg p-0.5 flex sm:mt-8">
           <button type="button" class="relative w-1/2 bg-white border-gray-200 rounded-md shadow-sm py-2 text-sm font-medium text-gray-900 whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:z-10 sm:w-auto sm:px-8">Monthly billing</button>
           <button type="button" class="ml-0.5 relative w-1/2 border border-transparent rounded-md py-2 text-sm font-medium text-gray-700 whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:z-10 sm:w-auto sm:px-8">Yearly billing</button>
@@ -17,7 +17,7 @@
             <p class="mt-8">
               <span class="text-4xl font-extrabold text-gray-900">${{ tier.priceMonthly }}</span>
               {{ ' ' }}
-              <span class="text-base font-medium text-gray-500">/mo</span>
+              <span class="text-base font-medium text-gray-500"> One-time Payment</span>
             </p>
             <a :href="tier.href" class="mt-8 block w-full bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900">Buy {{ tier.name }}</a>
           </div>
@@ -42,14 +42,14 @@
 
 const tiers = [
   {
-    name: 'Hobby',
+    name: 'Personal Portfilio',
     href: '#',
-    priceMonthly: 12,
-    description: 'All the basics for starting a new business',
-    includedFeatures: ['Potenti felis, in cras at at ligula nunc.', 'Orci neque eget pellentesque.'],
+    priceMonthly: 120,
+    description: 'All The features you need for a personal portfolio whatever your occupation is',
+    includedFeatures: ['We will Design & Develop your own personal portfolio website', 'We will help you get a domain name', 'we will also help you find an appropriate hosting service & plan'],
   },
   {
-    name: 'Freelancer',
+    name: 'Event Website',
     href: '#',
     priceMonthly: 24,
     description: 'All the basics for starting a new business',
