@@ -3,6 +3,7 @@ import Home from '../views/Home.vue'
 import Pricing from '../views/Pricing.vue'
 import About from '../views/About.vue'
 import Scheduling from '../views/Scheduling.vue'
+import PricingMonthly from '../views/PricingMonthly.vue'
 
 const routes = [
   {
@@ -14,6 +15,11 @@ const routes = [
     path: '/pricing',
     name: 'Pricing',
     component: Pricing
+  },
+  {
+    path: '/pricingmonthly',
+    name: 'PricingMonthly',
+    component: PricingMonthly
   },
   {
     path: '/about',
