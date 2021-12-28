@@ -18,7 +18,6 @@
               <span class="text-xs font-medium text-gray-500">From: </span>
               <span class="text-4xl font-extrabold text-gray-900">${{ tier.priceMonthly }}</span>
               {{ ' ' }}
-              
             </p>
             <a :href="tier.href" class="mt-8 block w-full bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900">Buy {{ tier.name }}</a>
           </div>
