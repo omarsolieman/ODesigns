@@ -16,7 +16,7 @@
               Better understand your customers
             </h2>
             <p class="mt-4 text-lg text-gray-500">
-              Semper curabitur ullamcorper posuere nunc sed. Ornare iaculis bibendum malesuada faucibus lacinia porttitor. Pulvinar laoreet sagittis viverra duis. In venenatis sem arcu pretium pharetra at. Lectus viverra dui tellus ornare pharetra.
+              At ODesigns we believe that a design should be so much more than just something nice to look at; a design is the face of your business, and the tools to a successful business. We pride ourselves on being able to help you not just design a website, but also understand all aspects of what makes your business work, and how to create a website that will reach out to your customers, build trust and increase sales.
             </p>
             <div class="mt-6">
               <a href="#" class="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700">

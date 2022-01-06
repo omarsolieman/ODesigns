@@ -40,13 +40,13 @@
             <ul role="list" class="mt-4 space-y-4">
               <li>
                 <a href="#" class="text-base text-gray-500 hover:text-gray-900">
-                  Marketing
+                  Marketing (Coming Soon)
                 </a>
               </li>
 
               <li>
                 <a href="#" class="text-base text-gray-500 hover:text-gray-900">
-                  Analytics
+                  Analytics (Coming Soon)
                 </a>
               </li>
             </ul>
@@ -57,20 +57,20 @@
             </h3>
             <ul role="list" class="mt-4 space-y-4">
               <li>
-                <a href="#" class="text-base text-gray-500 hover:text-gray-900">
+                <a href="pricing" class="text-base text-gray-500 hover:text-gray-900">
                   Pricing
                 </a>
               </li>
 
               <li>
                 <a href="#" class="text-base text-gray-500 hover:text-gray-900">
-                  Documentation
+                  Documentation (Coming Soon)
                 </a>
               </li>
 
               <li>
                 <a href="#" class="text-base text-gray-500 hover:text-gray-900">
-                  Guides
+                  Guides (Coming Soon)
                 </a>
               </li>
             </ul>
@@ -83,20 +83,20 @@
             </h3>
             <ul role="list" class="mt-4 space-y-4">
               <li>
-                <a href="#" class="text-base text-gray-500 hover:text-gray-900">
-                  About
+                <a href="about" class="text-base text-gray-500 hover:text-gray-900">
+                  About 
                 </a>
               </li>
 
               <li>
                 <a href="#" class="text-base text-gray-500 hover:text-gray-900">
-                  Blog
+                  Blog (Coming Soon)
                 </a>
               </li>
 
               <li>
                 <a href="#" class="text-base text-gray-500 hover:text-gray-900">
-                  Jobs
+                  Jobs (Coming Soon)
                 </a>
               </li>
             </ul>
