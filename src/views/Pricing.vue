@@ -80,16 +80,14 @@ const tiers = [
   {
     name: 'Enterprise',
     href: '#',
-    priceMonthly: 480,
-    description: 'All the basics for starting a new business',
+    priceMonthly: 600,
+    description: 'Custom Features and designs with customer support for a year',
     includedFeatures: [
-      'Potenti felis, in cras at at ligula nunc. ',
-      'Orci neque eget pellentesque.',
-      'Donec mauris sit in eu tincidunt etiam.',
-      'Faucibus volutpat magna.',
-      'Id sed tellus in varius quisque.',
-      'Risus egestas faucibus.',
-      'Risus cursus ullamcorper.',
+      'We will design & develop a website for whatever purpose you want. ',
+      'We can add Payment, Authoriation, and more.',
+      'We will take care of the domain name and hosting.',
+      'Up to 2 new mini features every 3 months.',
+      'We will provide support to you for a whole year.',
     ],
   },
 ]
