@@ -4,6 +4,8 @@ import Pricing from '../views/Pricing.vue'
 import About from '../views/About.vue'
 import Scheduling from '../views/Scheduling.vue'
 import PricingMonthly from '../views/PricingMonthly.vue'
+import WebsitesByUs from '../views/WebsitesByUs.vue'
+import DemoQuickView from '../components/DemoQuickView.vue'
 
 const routes = [
   {
@@ -31,7 +33,18 @@ const routes = [
     name: 'Scheduling',
     component: Scheduling
   },
+  {
+    path: '/websitesbyus',
+    name: 'WebsitesByUs',
+    component: WebsitesByUs
+  },
+  {
+    path: '/quick',
+    name: 'quick',
+    component: DemoQuickView
+  },
 ]
+
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
