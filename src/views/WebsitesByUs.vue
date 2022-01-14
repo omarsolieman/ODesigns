@@ -1,22 +1,6 @@
-<!--
-  This example requires Tailwind CSS v2.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/aspect-ratio'),
-    ],
-  }
-  ```
--->
 <template>
   <div class="bg-white">
-    <div class="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+    <div class="lg:-mt-24 max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
       <h2 class="sr-only">Products</h2>
       <h1 class="text-5xl font-extrabold text-gray-900 sm:text-center">Websites we made</h1>
         <p class="mt-5 text-xl text-gray-500 sm:text-center">This is a collection of websites we made, If you like any of them you can get similar ones for a discounted price</p>
@@ -36,34 +20,34 @@
       </div>
     </div>
   </div>
-  <demo-quick-view
+  <!-- <demo-quick-view
     v-show="isModalVisible"
     @close="closeModal"
-  />
+  /> -->
 </template>
 
 <script>
-import DemoQuickView from '../components/DemoQuickView.vue'
+//import DemoQuickView from '../components/DemoQuickView.vue'
 const products = [
   {
     id: 1,
     name: 'Introve Blog',
-    href: '#',
+    href: 'https://introve.netlify.app',
     price: '$48',
     imageSrc: 'https://i.imgur.com/q3xSGGj.png',
     imageAlt: 'A Blog that can be used for any purpose complete with disqus comment section and clean, fluid animations. Made with Vue.js and Cosmic.js for CMS.',
   },
   {
     id: 2,
-    name: 'Nomad Tumbler',
-    href: '#',
+    name: 'Personal Portfolio',
+    href: 'https://omardev.tk',
     price: '$35',
     imageSrc: 'https://i.imgur.com/UoUTEfB.png',
     imageAlt: 'Olive drab green insulated bottle with flared screw lid and flat top.',
   },
   {
     id: 3,
-    name: 'Focus Paper Refill',
+    name: 'HiUpload',
     href: '#',
     price: '$89',
     imageSrc: 'https://i.imgur.com/9XYCTBK.png',
@@ -71,7 +55,7 @@ const products = [
   },
   {
     id: 4,
-    name: 'Machined Mechanical Pencil',
+    name: 'Personal Portfolio 2',
     href: '#',
     price: '$35',
     imageSrc: 'https://i.imgur.com/ugsZbpL.png',
@@ -82,7 +66,7 @@ const products = [
 
 export default {
   components: {
-    DemoQuickView,
+    //DemoQuickView,
   },
   setup() {
     return {

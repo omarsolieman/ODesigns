@@ -1,48 +1,10 @@
 
 <template>
-<!--
-  This example requires Tailwind CSS v2.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/aspect-ratio'),
-    ],
-  }
-  ```
--->
 <div class="fixed z-10 inset-0 overflow-y-auto" role="dialog" aria-modal="true" :show="open"  >
   <div class="flex min-h-screen text-center md:block md:px-2 lg:px-4" style="font-size: 0;">
-    <!--
-      Background overlay, show/hide based on modal state.
-
-      Entering: "ease-out duration-300"
-        From: "opacity-0"
-        To: "opacity-100"
-      Leaving: "ease-in duration-200"
-        From: "opacity-100"
-        To: "opacity-0"
-    -->
     <div class="hidden fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity md:block" aria-hidden="true"></div>
-
     <!-- This element is to trick the browser into centering the modal contents. -->
     <span class="hidden md:inline-block md:align-middle md:h-screen" aria-hidden="true">&#8203;</span>
-
-    <!--
-      Modal panel, show/hide based on modal state.
-
-      Entering: "ease-out duration-300"
-        From: "opacity-0 translate-y-4 md:translate-y-0 md:scale-95"
-        To: "opacity-100 translate-y-0 md:scale-100"
-      Leaving: "ease-in duration-200"
-        From: "opacity-100 translate-y-0 md:scale-100"
-        To: "opacity-0 translate-y-4 md:translate-y-0 md:scale-95"
-    -->
     <div class="flex text-base text-left transform transition w-full md:inline-block md:max-w-2xl md:px-4 md:my-8 md:align-middle lg:max-w-4xl">
       <div class="w-full relative flex items-center bg-white px-4 pt-14 pb-8 overflow-hidden shadow-2xl sm:px-6 sm:pt-8 md:p-6 lg:p-8">
         <button @click="close" type="button" class="absolute top-4 right-4 text-gray-400 hover:text-gray-500 sm:top-8 sm:right-6 md:top-6 md:right-6 lg:top-8 lg:right-8">
@@ -55,58 +17,29 @@
 
         <div class="w-full grid grid-cols-1 gap-y-8 gap-x-6 items-start sm:grid-cols-12 lg:gap-x-8">
           <div class="aspect-w-2 aspect-h-3 rounded-lg bg-gray-100 overflow-hidden sm:col-span-4 lg:col-span-5">
-            <img src="https://tailwindui.com/img/ecommerce-images/product-quick-preview-02-detail.jpg" alt="Two each of gray, white, and black shirts arranged on table." class="object-center object-cover">
+            <img :src="product.imageSrc" :alt="product.imageAlt" class="object-center object-cover" />
           </div>
           <div class="sm:col-span-8 lg:col-span-7">
             <h2 class="text-2xl font-extrabold text-gray-900 sm:pr-12">
-              Basic Tee 6-Pack
+              {{ product.name }}
             </h2>
 
             <section aria-labelledby="information-heading" class="mt-2">
               <h3 id="information-heading" class="sr-only">Product information</h3>
 
               <p class="text-2xl text-gray-900">
-                $192
+                {{ product.price }}
               </p>
-
-              <!-- Reviews -->
-              <div class="mt-6">
+              <!-- <div class="mt-6">
                 <h4 class="sr-only">Reviews</h4>
                 <div class="flex items-center">
                   <div class="flex items-center">
-                    <!--
-                      Heroicon name: solid/star
-
-                      Active: "text-gray-900", Default: "text-gray-200"
-                    -->
-                    <svg class="text-gray-900 h-5 w-5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-
-                    <!-- Heroicon name: solid/star -->
-                    <svg class="text-gray-900 h-5 w-5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-
-                    <!-- Heroicon name: solid/star -->
-                    <svg class="text-gray-900 h-5 w-5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-
-                    <!-- Heroicon name: solid/star -->
-                    <svg class="text-gray-900 h-5 w-5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-
-                    <!-- Heroicon name: solid/star -->
-                    <svg class="text-gray-200 h-5 w-5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
+                    <StarIcon v-for="rating in [0, 1, 2, 3, 4]" :key="rating" :class="[product.rating > rating ? 'text-gray-900' : 'text-gray-200', 'h-5 w-5 flex-shrink-0']" aria-hidden="true" />
                   </div>
-                  <p class="sr-only">3.9 out of 5 stars</p>
-                  <a href="#" class="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">117 reviews</a>
+                  <p class="sr-only">{{ product.rating }} out of 5 stars</p>
+                  <a href="#" class="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">{{ product.reviewCount }} reviews</a>
                 </div>
-              </div>
+              </div> -->
             </section>
 
             <section aria-labelledby="options-heading" class="mt-10">
@@ -115,180 +48,54 @@
               <form>
                 <!-- Colors -->
                 <div>
-                  <h4 class="text-sm text-gray-900 font-medium">Color</h4>
+                  <h4 class="text-sm text-gray-900 font-medium">Theme</h4>
 
-                  <fieldset class="mt-4">
-                    <legend class="sr-only">
+                  <RadioGroup v-model="selectedColor" class="mt-4">
+                    <RadioGroupLabel class="sr-only">
                       Choose a color
-                    </legend>
+                    </RadioGroupLabel>
                     <div class="flex items-center space-x-3">
-                      <!--
-                        Active and Checked: "ring ring-offset-1"
-                        Not Active and Checked: "ring-2"
-                      -->
-                      <label class="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-400">
-                        <input type="radio" name="color-choice" value="White" class="sr-only" aria-labelledby="color-choice-0-label">
-                        <p id="color-choice-0-label" class="sr-only">
-                          White
-                        </p>
-                        <span aria-hidden="true" class="h-8 w-8 bg-white border border-black border-opacity-10 rounded-full"></span>
-                      </label>
-
-                      <!--
-                        Active and Checked: "ring ring-offset-1"
-                        Not Active and Checked: "ring-2"
-                      -->
-                      <label class="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-400">
-                        <input type="radio" name="color-choice" value="Gray" class="sr-only" aria-labelledby="color-choice-1-label">
-                        <p id="color-choice-1-label" class="sr-only">
-                          Gray
-                        </p>
-                        <span aria-hidden="true" class="h-8 w-8 bg-gray-200 border border-black border-opacity-10 rounded-full"></span>
-                      </label>
-
-                      <!--
-                        Active and Checked: "ring ring-offset-1"
-                        Not Active and Checked: "ring-2"
-                      -->
-                      <label class="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-900">
-                        <input type="radio" name="color-choice" value="Black" class="sr-only" aria-labelledby="color-choice-2-label">
-                        <p id="color-choice-2-label" class="sr-only">
-                          Black
-                        </p>
-                        <span aria-hidden="true" class="h-8 w-8 bg-gray-900 border border-black border-opacity-10 rounded-full"></span>
-                      </label>
+                      <RadioGroupOption as="template" v-for="color in product.colors" :key="color.name" :value="color" v-slot="{ active, checked }">
+                        <div :class="[color.selectedClass, active && checked ? 'ring ring-offset-1' : '', !active && checked ? 'ring-2' : '', '-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none']">
+                          <RadioGroupLabel as="p" class="sr-only">
+                            {{ color.name }}
+                          </RadioGroupLabel>
+                          <span aria-hidden="true" :class="[color.class, 'h-8 w-8 border border-black border-opacity-10 rounded-full']" />
+                        </div>
+                      </RadioGroupOption>
                     </div>
-                  </fieldset>
+                  </RadioGroup>
                 </div>
 
                 <!-- Sizes -->
                 <div class="mt-10">
                   <div class="flex items-center justify-between">
-                    <h4 class="text-sm text-gray-900 font-medium">Size</h4>
-                    <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">Size guide</a>
+                    <h4 class="text-sm text-gray-900 font-medium">Pages</h4>
                   </div>
 
-                  <fieldset class="mt-4">
-                    <legend class="sr-only">
+                  <RadioGroup v-model="selectedSize" class="mt-4">
+                    <RadioGroupLabel class="sr-only">
                       Choose a size
-                    </legend>
+                    </RadioGroupLabel>
                     <div class="grid grid-cols-4 gap-4">
-                      <!-- Active: "ring-2 ring-indigo-500" -->
-                      <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 bg-white shadow-sm text-gray-900 cursor-pointer">
-                        <input type="radio" name="size-choice" value="XXS" class="sr-only" aria-labelledby="size-choice-0-label">
-                        <p id="size-choice-0-label">
-                          XXS
-                        </p>
-
-                        <!--
-                          Active: "border", Not Active: "border-2"
-                          Checked: "border-indigo-500", Not Checked: "border-transparent"
-                        -->
-                        <div class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></div>
-                      </label>
-
-                      <!-- Active: "ring-2 ring-indigo-500" -->
-                      <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 bg-white shadow-sm text-gray-900 cursor-pointer">
-                        <input type="radio" name="size-choice" value="XS" class="sr-only" aria-labelledby="size-choice-1-label">
-                        <p id="size-choice-1-label">
-                          XS
-                        </p>
-
-                        <!--
-                          Active: "border", Not Active: "border-2"
-                          Checked: "border-indigo-500", Not Checked: "border-transparent"
-                        -->
-                        <div class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></div>
-                      </label>
-
-                      <!-- Active: "ring-2 ring-indigo-500" -->
-                      <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 bg-white shadow-sm text-gray-900 cursor-pointer">
-                        <input type="radio" name="size-choice" value="S" class="sr-only" aria-labelledby="size-choice-2-label">
-                        <p id="size-choice-2-label">
-                          S
-                        </p>
-
-                        <!--
-                          Active: "border", Not Active: "border-2"
-                          Checked: "border-indigo-500", Not Checked: "border-transparent"
-                        -->
-                        <div class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></div>
-                      </label>
-
-                      <!-- Active: "ring-2 ring-indigo-500" -->
-                      <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 bg-white shadow-sm text-gray-900 cursor-pointer">
-                        <input type="radio" name="size-choice" value="M" class="sr-only" aria-labelledby="size-choice-3-label">
-                        <p id="size-choice-3-label">
-                          M
-                        </p>
-
-                        <!--
-                          Active: "border", Not Active: "border-2"
-                          Checked: "border-indigo-500", Not Checked: "border-transparent"
-                        -->
-                        <div class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></div>
-                      </label>
-
-                      <!-- Active: "ring-2 ring-indigo-500" -->
-                      <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 bg-white shadow-sm text-gray-900 cursor-pointer">
-                        <input type="radio" name="size-choice" value="L" class="sr-only" aria-labelledby="size-choice-4-label">
-                        <p id="size-choice-4-label">
-                          L
-                        </p>
-
-                        <!--
-                          Active: "border", Not Active: "border-2"
-                          Checked: "border-indigo-500", Not Checked: "border-transparent"
-                        -->
-                        <div class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></div>
-                      </label>
-
-                      <!-- Active: "ring-2 ring-indigo-500" -->
-                      <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 bg-white shadow-sm text-gray-900 cursor-pointer">
-                        <input type="radio" name="size-choice" value="XL" class="sr-only" aria-labelledby="size-choice-5-label">
-                        <p id="size-choice-5-label">
-                          XL
-                        </p>
-
-                        <!--
-                          Active: "border", Not Active: "border-2"
-                          Checked: "border-indigo-500", Not Checked: "border-transparent"
-                        -->
-                        <div class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></div>
-                      </label>
-
-                      <!-- Active: "ring-2 ring-indigo-500" -->
-                      <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 bg-white shadow-sm text-gray-900 cursor-pointer">
-                        <input type="radio" name="size-choice" value="XXL" class="sr-only" aria-labelledby="size-choice-6-label">
-                        <p id="size-choice-6-label">
-                          XXL
-                        </p>
-
-                        <!--
-                          Active: "border", Not Active: "border-2"
-                          Checked: "border-indigo-500", Not Checked: "border-transparent"
-                        -->
-                        <div class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></div>
-                      </label>
-
-                      <!-- Active: "ring-2 ring-indigo-500" -->
-                      <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 bg-gray-50 text-gray-200 cursor-not-allowed">
-                        <input type="radio" name="size-choice" value="XXXL" disabled class="sr-only" aria-labelledby="size-choice-7-label">
-                        <p id="size-choice-7-label">
-                          XXXL
-                        </p>
-
-                        <div aria-hidden="true" class="absolute -inset-px rounded-md border-2 border-gray-200 pointer-events-none">
-                          <svg class="absolute inset-0 w-full h-full text-gray-200 stroke-2" viewBox="0 0 100 100" preserveAspectRatio="none" stroke="currentColor">
-                            <line x1="0" y1="100" x2="100" y2="0" vector-effect="non-scaling-stroke" />
-                          </svg>
+                      <RadioGroupOption as="template" v-for="size in product.sizes" :key="size.name" :value="size" :disabled="!size.inStock" v-slot="{ active, checked }">
+                        <div :class="[size.inStock ? 'bg-white shadow-sm text-gray-900 cursor-pointer' : 'bg-gray-50 text-gray-200 cursor-not-allowed', active ? 'ring-2 ring-indigo-500' : '', 'group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1']">
+                          <RadioGroupLabel as="p">
+                            {{ size.name }}
+                          </RadioGroupLabel>
+                          <div v-if="size.inStock" :class="[active ? 'border' : 'border-2', checked ? 'border-indigo-500' : 'border-transparent', 'absolute -inset-px rounded-md pointer-events-none']" aria-hidden="true" />
+                          <div v-else aria-hidden="true" class="absolute -inset-px rounded-md border-2 border-gray-200 pointer-events-none">
+                            <svg class="absolute inset-0 w-full h-full text-gray-200 stroke-2" viewBox="0 0 100 100" preserveAspectRatio="none" stroke="currentColor">
+                              <line x1="0" y1="100" x2="100" y2="0" vector-effect="non-scaling-stroke" />
+                            </svg>
+                          </div>
                         </div>
-                      </label>
+                      </RadioGroupOption>
                     </div>
-                  </fieldset>
+                  </RadioGroup>
                 </div>
 
-                <button type="submit" class="mt-6 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add to bag</button>
+                <button type="submit" class="mt-6 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Get Now</button>
               </form>
             </section>
           </div>
@@ -297,145 +104,44 @@
     </div>
   </div>
 </div>
-  <!-- <TransitionRoot as="template" :show="open">
-    <Dialog as="div" class="fixed z-10 inset-0 overflow-y-auto" @close="open = false">
-      <div class="flex min-h-screen text-center md:block md:px-2 lg:px-4" style="font-size: 0;">
-        <TransitionChild as="template" enter="ease-out duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="ease-in duration-200" leave-from="opacity-100" leave-to="opacity-0">
-          <DialogOverlay class="hidden fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity md:block" />
-        </TransitionChild>
-
-        <span class="hidden md:inline-block md:align-middle md:h-screen" aria-hidden="true">&#8203;</span>
-        <TransitionChild as="template" enter="ease-out duration-300" enter-from="opacity-0 translate-y-4 md:translate-y-0 md:scale-95" enter-to="opacity-100 translate-y-0 md:scale-100" leave="ease-in duration-200" leave-from="opacity-100 translate-y-0 md:scale-100" leave-to="opacity-0 translate-y-4 md:translate-y-0 md:scale-95">
-          <div class="flex text-base text-left transform transition w-full md:inline-block md:max-w-2xl md:px-4 md:my-8 md:align-middle lg:max-w-4xl">
-            <div class="w-full relative flex items-center bg-white px-4 pt-14 pb-8 overflow-hidden shadow-2xl sm:px-6 sm:pt-8 md:p-6 lg:p-8">
-              <button type="button" class="absolute top-4 right-4 text-gray-400 hover:text-gray-500 sm:top-8 sm:right-6 md:top-6 md:right-6 lg:top-8 lg:right-8" @click="open = false">
-                <span @click="close" class="sr-only">Close</span>
-                <XIcon class="h-6 w-6" aria-hidden="true" />
-              </button>
-
-              <div class="w-full grid grid-cols-1 gap-y-8 gap-x-6 items-start sm:grid-cols-12 lg:gap-x-8">
-                <div class="aspect-w-2 aspect-h-3 rounded-lg bg-gray-100 overflow-hidden sm:col-span-4 lg:col-span-5">
-                  <img :src="product.imageSrc" :alt="product.imageAlt" class="object-center object-cover" />
-                </div>
-                <div class="sm:col-span-8 lg:col-span-7">
-                  <h2 class="text-2xl font-extrabold text-gray-900 sm:pr-12">
-                    {{ product.name }}
-                  </h2>
-
-                  <section aria-labelledby="information-heading" class="mt-2">
-                    <h3 id="information-heading" class="sr-only">Product information</h3>
-
-                    <p class="text-2xl text-gray-900">
-                      {{ product.price }}
-                    </p>
-                    <div class="mt-6">
-                      <h4 class="sr-only">Reviews</h4>
-                      <div class="flex items-center">
-                        <div class="flex items-center">
-                          <StarIcon v-for="rating in [0, 1, 2, 3, 4]" :key="rating" :class="[product.rating > rating ? 'text-gray-900' : 'text-gray-200', 'h-5 w-5 flex-shrink-0']" aria-hidden="true" />
-                        </div>
-                        <p class="sr-only">{{ product.rating }} out of 5 stars</p>
-                        <a href="#" class="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">{{ product.reviewCount }} reviews</a>
-                      </div>
-                    </div>
-                  </section>
-
-                  <section aria-labelledby="options-heading" class="mt-10">
-                    <h3 id="options-heading" class="sr-only">Product options</h3>
-
-                    <form>
-                      <div>
-                        <h4 class="text-sm text-gray-900 font-medium">Color</h4>
-
-                        <RadioGroup v-model="selectedColor" class="mt-4">
-                          <RadioGroupLabel class="sr-only">
-                            Choose a color
-                          </RadioGroupLabel>
-                          <div class="flex items-center space-x-3">
-                            <RadioGroupOption as="template" v-for="color in product.colors" :key="color.name" :value="color" v-slot="{ active, checked }">
-                              <div :class="[color.selectedClass, active && checked ? 'ring ring-offset-1' : '', !active && checked ? 'ring-2' : '', '-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none']">
-                                <RadioGroupLabel as="p" class="sr-only">
-                                  {{ color.name }}
-                                </RadioGroupLabel>
-                                <span aria-hidden="true" :class="[color.class, 'h-8 w-8 border border-black border-opacity-10 rounded-full']" />
-                              </div>
-                            </RadioGroupOption>
-                          </div>
-                        </RadioGroup>
-                      </div>
-
-                      <div class="mt-10">
-                        <div class="flex items-center justify-between">
-                          <h4 class="text-sm text-gray-900 font-medium">Size</h4>
-                          <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">Size guide</a>
-                        </div>
-
-                        <RadioGroup v-model="selectedSize" class="mt-4">
-                          <RadioGroupLabel class="sr-only">
-                            Choose a size
-                          </RadioGroupLabel>
-                          <div class="grid grid-cols-4 gap-4">
-                            <RadioGroupOption as="template" v-for="size in product.sizes" :key="size.name" :value="size" :disabled="!size.inStock" v-slot="{ active, checked }">
-                              <div :class="[size.inStock ? 'bg-white shadow-sm text-gray-900 cursor-pointer' : 'bg-gray-50 text-gray-200 cursor-not-allowed', active ? 'ring-2 ring-indigo-500' : '', 'group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1']">
-                                <RadioGroupLabel as="p">
-                                  {{ size.name }}
-                                </RadioGroupLabel>
-                                <div v-if="size.inStock" :class="[active ? 'border' : 'border-2', checked ? 'border-indigo-500' : 'border-transparent', 'absolute -inset-px rounded-md pointer-events-none']" aria-hidden="true" />
-                                <div v-else aria-hidden="true" class="absolute -inset-px rounded-md border-2 border-gray-200 pointer-events-none">
-                                  <svg class="absolute inset-0 w-full h-full text-gray-200 stroke-2" viewBox="0 0 100 100" preserveAspectRatio="none" stroke="currentColor">
-                                    <line x1="0" y1="100" x2="100" y2="0" vector-effect="non-scaling-stroke" />
-                                  </svg>
-                                </div>
-                              </div>
-                            </RadioGroupOption>
-                          </div>
-                        </RadioGroup>
-                      </div>
-
-                      <button type="submit" class="mt-6 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add to bag</button>
-                    </form>
-                  </section>
-                </div>
-              </div>
-            </div>
-          </div>
-        </TransitionChild>
-      </div>
-    </Dialog>
-  </TransitionRoot> -->
 </template>
 
 <script>
 import { ref } from 'vue'
+import {
+  RadioGroup,
+  RadioGroupLabel,
+  RadioGroupOption,
+} from '@headlessui/vue'
 
 const product = {
-  name: 'Basic Tee 6-Pack ',
+  name: 'Introve Blog ',
   price: '$192',
-  rating: 3.9,
-  reviewCount: 117,
   href: '#',
-  imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-quick-preview-02-detail.jpg',
+  imageSrc: 'https://i.imgur.com/q3xSGGj.png',
   imageAlt: 'Two each of gray, white, and black shirts arranged on table.',
   colors: [
-    { name: 'White', class: 'bg-white', selectedClass: 'ring-gray-400' },
-    { name: 'Gray', class: 'bg-gray-200', selectedClass: 'ring-gray-400' },
-    { name: 'Black', class: 'bg-gray-900', selectedClass: 'ring-gray-900' },
+    { name: 'Light Mode', class: 'bg-white', selectedClass: 'ring-gray-400' },
+    { name: 'Dark Mode', class: 'bg-gray-900', selectedClass: 'ring-gray-900' },
   ],
   sizes: [
-    { name: 'XXS', inStock: true },
-    { name: 'XS', inStock: true },
-    { name: 'S', inStock: true },
-    { name: 'M', inStock: true },
-    { name: 'L', inStock: true },
-    { name: 'XL', inStock: true },
-    { name: 'XXL', inStock: true },
-    { name: 'XXXL', inStock: false },
+    { name: 'Home Page', inStock: false },
+    { name: 'Content', inStock: false },
+    { name: 'Contact us', inStock: false },
+    { name: 'Sign in', inStock: false },
+    { name: 'Sign up', inStock: false },
+    { name: 'Payment', inStock: false },
+    { name: 'Cart', inStock: false },
   ],
 }
 
 export default {
   components: {
+    RadioGroup,
+    RadioGroupLabel,
+    RadioGroupOption,
   },
+
   setup() {
     const open = ref(false)
     const selectedColor = ref(product.colors[0])
@@ -450,16 +156,9 @@ export default {
   },
 
   methods: {
-        close() {
-        this.$emit('close');
-        },
+    close() {
+    this.$emit('close');
     },
-
-//   name: 'Modal',
-//   methods: {
-//     close() {
-//     this.$emit('close');
-//     },
-//   },
+  },
 }
 </script>
