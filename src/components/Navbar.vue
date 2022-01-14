@@ -32,17 +32,6 @@
           </a> -->
         </div>
       </div>
-
-      <!--
-        Mobile menu, show/hide based on mobile menu state.
-
-        Entering: "duration-200 ease-out"
-          From: "opacity-0 scale-95"
-          To: "opacity-100 scale-100"
-        Leaving: "duration-100 ease-in"
-          From: "opacity-100 scale-100"
-          To: "opacity-0 scale-95"
-      -->
       <div v-if=" !mobileNav " class="absolute z-30 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
         <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
           <div class="pt-5 pb-6 px-5">
