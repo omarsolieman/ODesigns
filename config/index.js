@@ -58,11 +58,11 @@ module.exports = {
   socialMedia: [
     {
       name: "Linkedin",
-      url: "www.linkedin.com/in/omarsolieman",
+      url: "https://linkedin.com/in/omarsolieman",
     },
     {
-      name: "Blog",
-      url: "https://introve.netlify.com/",
+      name: "Instagram",
+      url: "https://instagram.com/omarsolieman",
     },
     {
       name: "Github",
