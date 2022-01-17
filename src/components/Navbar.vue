@@ -5,7 +5,7 @@
         <div class="flex justify-start lg:w-0 lg:flex-1">
           <a href="#">
             <span class="sr-only">ODesigns</span>
-            <img class="h-14 w-auto sm:h-14" src="../assets/logo.png" alt="">
+            <img class="h-14 w-auto sm:h-14" src="../assets/logoMinimal.png" alt="">
           </a>
         </div>
         <div class="-mr-2 -my-2 md:hidden">
@@ -37,7 +37,7 @@
           <div class="pt-5 pb-6 px-5">
             <div class="flex items-center justify-between">
               <div>
-                <img class="h-14 w-auto" src="../assets/logo.png" alt="ODesigns">
+                <img class="h-14 w-auto" src="../assets/logoMinimal.png" alt="ODesigns">
               </div>
               <div class="-mr-2">
                 <button  v-on:click="mobileNav = true" type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
