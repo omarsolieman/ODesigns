@@ -5,6 +5,7 @@ import About from '../views/About.vue'
 import Scheduling from '../views/Scheduling.vue'
 import WebsitesByUs from '../views/WebsitesByUs.vue'
 import DemoQuickView from '../components/DemoQuickView.vue'
+import Content from '../views/Content.vue'
 
 const routes = [
   {
@@ -36,6 +37,11 @@ const routes = [
     path: '/quick',
     name: 'quick',
     component: DemoQuickView
+  },
+  {
+    path: '/content',
+    name: 'content',
+    component: Content
   },
 ]
 

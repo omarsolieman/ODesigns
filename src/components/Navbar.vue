@@ -83,6 +83,7 @@ const navigation = [
   { name: 'Home', href: '/' },
   { name: 'Pricing', href: 'pricing' },
   { name: 'Company', href: 'about' },
+  //{ name: 'Content', href: 'content' },
   { name: 'Websites by us', href: 'websitesbyus' },
 ]
 
