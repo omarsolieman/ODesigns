@@ -39,7 +39,7 @@ const solutions = [
     href: 'faq',
   },
   { name: 'Ecommerce API', description: 'Easy to use API with advanced features for your Ecommerce applications [Coming Soon!]', href: '#' },
-  { name: 'Privacy Policy', description: 'Understand how we take your privacy seriously.', href: '#' },
+  { name: 'Privacy Policy', description: 'Understand how we take your privacy seriously.', href: 'privacypolicy' },
 ]
 
 export default {
