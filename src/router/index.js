@@ -6,6 +6,8 @@ import Scheduling from '../views/Scheduling.vue'
 import WebsitesByUs from '../views/WebsitesByUs.vue'
 import DemoQuickView from '../components/DemoQuickView.vue'
 import Content from '../views/Content.vue'
+import popOver from '../components/popOver.vue'
+import FAQ from '../views/FAQ.vue'
 
 const routes = [
   {
@@ -34,6 +36,12 @@ const routes = [
     component: WebsitesByUs
   },
   {
+    path: '/faq',
+    name: 'faq',
+    component: FAQ
+  },
+  //Component Testing
+  {
     path: '/quick',
     name: 'quick',
     component: DemoQuickView
@@ -42,6 +50,11 @@ const routes = [
     path: '/content',
     name: 'content',
     component: Content
+  },
+  {
+    path: '/popover',
+    name: 'popover',
+    component: popOver
   },
 ]
 
