@@ -60,6 +60,7 @@
               <a v-for="item in navigation" :key="item.name" :href="item.href" class="text-base font-medium text-gray-900 hover:text-gray-700">
                 {{ item.name }}
               </a>
+          <pop-over/>
             </div>
             <div class="mt-6">
               <!-- <a href="#" class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
