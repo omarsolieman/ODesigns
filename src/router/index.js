@@ -8,6 +8,7 @@ import DemoQuickView from '../components/DemoQuickView.vue'
 import Content from '../views/Content.vue'
 import popOver from '../components/popOver.vue'
 import FAQ from '../views/FAQ.vue'
+import PrivacyPolicy from '../views/PrivacyPolicy.vue'
 
 const routes = [
   {
@@ -39,6 +40,11 @@ const routes = [
     path: '/faq',
     name: 'faq',
     component: FAQ
+  },
+  {
+    path: '/privacypolicy',
+    name: 'privacypolicy',
+    component: PrivacyPolicy
   },
   //Component Testing
   {
