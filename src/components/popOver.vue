@@ -38,7 +38,6 @@ const solutions = [
     description: 'Get all of your questions answered in our FAQ section or contact support.',
     href: 'faq',
   },
-  { name: 'Guides', description: 'Learn how to maximize our platform to get the most out of it.', href: '#' },
   { name: 'Ecommerce API', description: 'Easy to use API with advanced features for your Ecommerce applications [Coming Soon!]', href: '#' },
   { name: 'Privacy Policy', description: 'Understand how we take your privacy seriously.', href: '#' },
 ]
