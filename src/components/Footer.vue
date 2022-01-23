@@ -95,6 +95,12 @@
               </li>
 
               <li>
+                <a href="faq" class="text-base text-gray-500 hover:text-gray-900">
+                  FAQ - Frequently Asked Questions
+                </a>
+              </li>
+
+              <li>
                 <a href="#" class="text-base text-gray-500 hover:text-gray-900">
                   Blog (Coming Soon)
                 </a>
@@ -136,7 +142,7 @@
     </div>
     <div class="mt-12 border-t border-gray-200 pt-8">
       <p class="text-base text-gray-400 xl:text-center">
-        &copy; 2021 ODesigns, Inc. All rights reserved.
+        &copy; 2022 ODesigns, Inc. All rights reserved.
       </p>
     </div>
   </div>
