@@ -38,7 +38,7 @@ const solutions = [
     description: 'Get all of your questions answered in our FAQ section or contact support.',
     href: 'faq',
   },
-  { name: 'Ecommerce API', description: 'Easy to use API with advanced features for your Ecommerce applications [Coming Soon!]', href: '#' },
+  { name: 'Ecommerce API', description: 'Easy to use API with advanced features for your Ecommerce applications [Coming Soon!] Django and Node.js!', href: '#' },
   { name: 'Privacy Policy', 
     description: 'Understand how we take your privacy seriously. [In Review to comply with CCPA]', 
     //href: 'privacypolicy' 
