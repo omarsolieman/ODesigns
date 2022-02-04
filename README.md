@@ -1,3 +1,24 @@
-# ODesigns
- Website design agency's website using vue.js and tailwindcss
- [![Netlify Status](https://api.netlify.com/api/v1/badges/0098793e-4060-431d-867c-63416faa150f/deploy-status)](https://app.netlify.com/sites/odesigns/deploys)
+# apipage
+
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).

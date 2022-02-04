@@ -1,98 +1,88 @@
 <template>
   <header>
-    <div class="relative bg-white">
-      <div class="flex justify-between items-center max-w-7xl mx-auto px-4 py-6 sm:px-6 md:justify-start md:space-x-10 lg:px-8">
-        <div class="flex justify-start lg:w-0 lg:flex-1">
-          <a href="#">
-            <span class="sr-only">ODesigns</span>
-            <img class="h-14 w-auto sm:h-14" src="../assets/logoMinimal.png" alt="">
-          </a>
-        </div>
-        <div class="-mr-2 -my-2 md:hidden">
-          <button v-on:click=" mobileNav = !mobileNav " type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
-            <span class="sr-only">Open menu</span>
-            <!-- Heroicon name: outline/menu -->
-            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-        </div>
-        <nav class="hidden md:flex space-x-10">
-          
-          <a v-for="item in navigation" :key="item.name" :href="item.href" class="text-base font-medium text-gray-500 hover:text-gray-900">
-            {{ item.name }}
-          </a>
-          <pop-over/>
+    <Popover as="header" class="relative">
+      <div class="bg-gray-900 pt-6">
+        <nav class="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6" aria-label="Global">
+          <div class="flex items-center flex-1">
+            <div class="flex items-center justify-between w-full md:w-auto">
+              <a href="#">
+                <span class="sr-only">Workflow</span>
+                <img class="h-8 w-auto sm:h-10" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="" />
+              </a>
+              <div class="-mr-2 flex items-center md:hidden">
+                <PopoverButton class="bg-gray-900 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-800 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-white">
+                  <span class="sr-only">Open main menu</span>
+                 <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                </PopoverButton>
+              </div>
+            </div>
+            <div class="hidden space-x-8 md:flex md:ml-10">
+              <a v-for="item in navigation" :key="item.name" :href="item.href" class="text-base font-medium text-white hover:text-gray-300">{{ item.name }}</a>
+            </div>
+          </div>
+          <div class="hidden md:flex md:items-center md:space-x-6">
+            <a href="#" class="text-base font-medium text-white hover:text-gray-300">
+              Log in
+            </a>
+            <a href="#" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700">
+              Start free trial
+            </a>
+          </div>
         </nav>
-        <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-          <!-- <a href="#" class="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
-            Sign in
-          </a>
-          <a href="#" class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
-            Sign up
-          </a> -->
-        </div>
       </div>
-      <div v-if=" !mobileNav " class="absolute z-30 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
-        <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
-          <div class="pt-5 pb-6 px-5">
-            <div class="flex items-center justify-between">
+
+      <transition enter-active-class="duration-150 ease-out" enter-from-class="opacity-0 scale-95" enter-to-class="opacity-100 scale-100" leave-active-class="duration-100 ease-in" leave-from-class="opacity-100 scale-100" leave-to-class="opacity-0 scale-95">
+        <PopoverPanel focus class="absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top md:hidden">
+          <div class="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
+            <div class="px-5 pt-4 flex items-center justify-between">
               <div>
-                <img class="h-14 w-auto" src="../assets/logoMinimal.png" alt="ODesigns">
+                <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="" />
               </div>
               <div class="-mr-2">
-                <button  v-on:click="mobileNav = true" type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                <PopoverButton class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-600">
                   <span class="sr-only">Close menu</span>
-                  <!-- Heroicon name: outline/x -->
                   <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+                </PopoverButton>
               </div>
             </div>
-            <div class="mt-6">
-              <nav class="grid grid-cols-1 gap-7">
-              </nav>
+            <div class="pt-5 pb-6">
+              <div class="px-2 space-y-1">
+                <a v-for="item in navigation" :key="item.name" :href="item.href" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">{{ item.name }}</a>
+              </div>
+              <div class="mt-6 px-5">
+                <a href="#" class="block text-center w-full py-3 px-4 rounded-md shadow bg-indigo-600 text-white font-medium hover:bg-indigo-700">Start free trial</a>
+              </div>
+              <div class="mt-6 px-5">
+                <p class="text-center text-base font-medium text-gray-500">Existing customer? <a href="#" class="text-gray-900 hover:underline">Login</a></p>
+              </div>
             </div>
           </div>
-          <div class="py-6 px-5">
-            <div class="grid grid-cols-2 gap-4">
-              <a v-for="item in navigation" :key="item.name" :href="item.href" class="text-base font-medium text-gray-900 hover:text-gray-700">
-                {{ item.name }}
-              </a>
-          <pop-over/>
-            </div>
-            <div class="mt-6">
-              <!-- <a href="#" class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
-                Sign up
-              </a>
-              <p class="mt-6 text-center text-base font-medium text-gray-500">
-                Existing customer?
-                <a href="#" class="text-gray-900">
-                  Sign in
-                </a>
-              </p> -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+        </PopoverPanel>
+      </transition>
+    </Popover>
   </header>
 </template>
 
 <script>
-import popOver from '../components/popOver.vue'
+import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
+
 const navigation = [
-  { name: 'Home', href: '/' },
-  { name: 'Pricing', href: 'pricing' },
-  { name: 'Company', href: 'about' },
-  //{ name: 'Content', href: 'content' },
-  //{ name: 'Websites by us', href: 'websitesbyus' },
+  { name: 'Product', href: '#' },
+  { name: 'Features', href: '#' },
+  { name: 'Marketplace', href: '#' },
+  { name: 'Company', href: '#' },
 ]
+
 
 export default {
   components: {
-    popOver
+    Popover,
+    PopoverButton,
+    PopoverPanel,
   },
   data () {
     return {
