@@ -16,7 +16,7 @@
               Stay on top of trends
             </h2>
             <p class="mt-4 text-lg text-gray-500">
-              At ODesigns we believe in the power of good websites, So we want to make sure evryone has a good website tailored to their needs and business, wether it is to market yourself or your business. While keeping them at the most affordable prices.
+              At ODesigns, we believe in the power of good websites, So we want to make sure everyone has a good website tailored to their needs and business, whether it is to market yourself or your business. While keeping them at the most affordable prices.
             </p>
             <div class="mt-6">
               <a href="#" class="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700">
