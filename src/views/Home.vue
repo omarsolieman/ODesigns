@@ -1,7 +1,7 @@
 <template>
   <div class="relative overflow-hidden">
     <main>
-      <div class="pt-10 bg-gray-900 sm:pt-16 lg:pt-8 lg:pb-36 lg:overflow-hidden">
+      <div class="pt-10 max-h-full bg-gray-900 sm:pt-16 lg:pt-8 lg:pb-36 lg:overflow-hidden">
         <div class="mx-auto max-w-7xl lg:px-8">
           <div class="lg:grid lg:grid-cols-2 lg:gap-8">
             <div class="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:px-0 lg:text-left lg:flex lg:items-center">
