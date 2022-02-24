@@ -6,8 +6,8 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
           <div class="relative shadow-xl sm:rounded-2xl sm:overflow-hidden">
             <div class="absolute inset-0">
-              <img class="object-center mx-auto h-full w-auto object-cover" src="../assets/heroImage.png" alt="People working on laptops">
-              <div class="absolute inset-0 bg-indigo-600 mix-blend-multiply"></div>
+              <img class="h-full w-full object-cover" src="../assets/heroImage.jpg" alt="People working on laptops">
+              <div class="absolute inset-0 bg-indigo-700 mix-blend-multiply"></div>
             </div>
             <div class="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
               <h1 class="text-center text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
