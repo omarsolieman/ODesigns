@@ -13,7 +13,7 @@
           </div>
         </div>
         <div class="lg:-mt-32 sm:-mt-12 aspect-w-5 aspect-h-3 md:aspect-w-2 md:aspect-h-1">
-          <img class="transform translate-x-6 translate-y-6 rounded-md object-cover object-left-center sm:translate-x-16 lg:translate-y-20" src="../assets/getDemoNow.png" alt="People having a meeting" />
+          <img class="transform translate-x-6 translate-y-6 rounded-md object-cover object-left-top sm:translate-x-16 lg:translate-y-20" src="../assets/getDemoNow.jpg" alt="People having a meeting" />
         </div>
       </div>
     </div>
