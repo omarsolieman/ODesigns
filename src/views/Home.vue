@@ -32,6 +32,7 @@
         </div>
       </div>
     </div>
+    <logoCloud class="mt-12"/>
     <feature-section/>
     <cta-section/>
     <booking-modal
@@ -46,6 +47,7 @@
 import featureSection from '../sections/featureSection.vue'
 import ctaSection from '../sections/ctaSection.vue'
 import bookingModal from '../components/bookingModal.vue'
+import LogoCloud from '../sections/logoCloud.vue'
 
 
 export default {
@@ -53,6 +55,7 @@ export default {
     featureSection,
     ctaSection, 
     bookingModal,
+    LogoCloud,
   },
   data() {
     return {
